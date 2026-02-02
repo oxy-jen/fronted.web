@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dashboard page</title>
+  <link rel="stylesheet" href="file.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+  .file{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 20px;
+    border: 2px rgb(67, 36, 179) solid;
+    height: 40vh;
+    width: 900px;
+    border-radius: 20px;
+    background: #8e4fe025;
+  }
+  .upload-box{
+    width: 100%;
+    max-width:500px;
+    height:220px;
+    border:2px dashed rgb(108,87,215);
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    background:#fbf7ff50;
+    transition:.3s;
+  }
+  .upload-box p{
+    color: rgb(100, 50, 229);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .upload-box span i{
+    color: #FFC600;
+    font-size: 2rem;
+    
+  }
+  .upload-box span{
+    color: #777;
+  }
+
+  .upload-box:hover{
+    background:#f0efff;
+    transform: scaleX(1.02);
+  }
+  .upload-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .upload-btn{
+    margin: 10px;
+    padding: 15px;
+    width: 120px;
+    color: rgb(98, 4, 250);
+    border-radius: 50px;
+  }
+  .upload-btn:hover{
+    background: #7d06f550;
+  }
+
+  .card{
+    padding: 50px;
+  }
+</style>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>dashboard</span>
+    </div>
+    <ul class="nav-links">
+      <li class="active">
+        <a href="index.html">
+          <i class="fa-solid fa-gauge"></i>
+          <span>Home</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="dashboard.html">
+          <i class="fa-solid fa-folder"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html">
+          <i class="fa-solid fa-folder"></i>
+          <span>About</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html">
+          <i class="fa-solid fa-gear"></i>
+          <span>Contact</span>
+        </a>
+      </li>
+    </ul>
+
+      <button class="toggle-btn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+  </aside>
+
+
+  <div class="file">
+    <div class="upload-wrapper">
+      <label for="file" class="upload-box">
+        <p>
+          <span><i class="fa-regular fa-folder-open"></i></span>
+          Drag & Drop your file here
+        </p>
+        <span>or click to browse</span>
+      </label>
+  
+      <input type="file" id="file" hidden>
+  
+      <button class="upload-btn" type="submit">Upload</button>
+    </div>
+  </div>
+
+  <section>
+    <div class="card">
+     <h1>🆘 You stack?</h1> 
+
+<p>Stuck or not sure what to do next?
+We’ve got your back.
+
+📁 Uploading issues?
+
+⚙️ Settings not behaving?
+
+🤔 Don’t know where to start?
+
+Check our quick tips, explore the docs, or reach out for support.
+Help is one click away — no stress, no guesswork.
+
+👉 Get Support
+👉 View Help Guide
+</p>
+    </div>
+
+    
+      <div class="card">
+       <h1><i class="fa-solid fa-circle-question"></i> Need Help?</h1>
+       
+       <p>
+
+        Stuck or not sure what to do next?
+        We’ve got your back.
+        <li><span><i class="fa-solid fa-cloud-arrow-up"></i></span> Uploading issues?</li>
+        
+        <li><span><i class="fa-solid fa-gears"></i></span> Settings not behaving?</li>
+        
+        <li><span><i class="fa-solid fa-square-person-confined"></i></span> Don’t know where to start?</li>
+        
+        <span>Check our quick tips, explore the docs, or reach out for support.
+          Help is one click away — no stress, no guesswork.</span>
+        
+        
+        <li><span><i class="fa-solid fa-handshake-angle"></i></span> Get Support</li>
+        
+        <li><span><i class="fa-regular fa-hand-point-right"></i></span> View Help Guide </p></li>
+      </div>
+    
+    
+  </section>
+
+
+  
+
+  
+
+ <footer background = "black">
+    <div class="footer">
+      <a href="mailto:oxygenvessels@gmail.com">Email us <i class="fa-regular fa-envelope"></i></a>
+      <a href="tel:+254791305329">Contact us <i class="fa-solid fa-phone-flip"></i> </a>
+      <a href="https://github.com/github-copilot">Github <i class="fa-brands fa-github"></i></a>
+      <a href="#">Facebook <i class="fa-brands fa-facebook"></i></a>
+
+    </div>
+    <a href="tel:+254791305329" class="contact-button">
+      <i class="fa-solid fa-phone-flip"></i> Call Me
+    </a>  
+
+
+  </footer>
+  <script>
+   const fileInput = document.getElementById("file");
+  const box = document.querySelector(".upload-box");
+
+  fileInput.addEventListener("change", ()=>{
+    box.querySelector("p").innerText = fileInput.files[0].name;
+  });
+
+  const toggleBtn = document.querySelector(".toggle-btn");
+const sidebar = document.querySelector(".sidebar");
+
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("collapsed");
+});
+  </script>
+</body>
+</html>
